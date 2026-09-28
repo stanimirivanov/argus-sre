@@ -1,0 +1,15 @@
+# Default ownership. Owners must have write access for automatic review requests.
+* @stanimirivanov
+
+# Governance, authority, compatibility, and security-sensitive policy.
+/AGENTS.md @stanimirivanov
+/CONTRIBUTING.md @stanimirivanov
+/SECURITY.md @stanimirivanov
+/Makefile @stanimirivanov
+/.github/ @stanimirivanov
+/docs/architecture/ @stanimirivanov
+/docs/decisions/ @stanimirivanov
+/docs/development/ @stanimirivanov
+/docs/product/ @stanimirivanov
+/docs/roadmap/ @stanimirivanov
+/scripts/ @stanimirivanov
