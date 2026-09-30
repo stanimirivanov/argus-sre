@@ -13,6 +13,9 @@
   integrates with them through versioned, language-neutral evidence contracts.
 - The repository currently contains the product, architecture, governance, and
   implementation roadmap foundation. It has no production runtime yet.
+- Start from the [documentation map](docs/README.md), run `make bootstrap` for
+  a new checkout, `make verify` during development, and `make validate` before
+  handoff.
 
 Argus SRE helps an on-call engineer move from an alert to a defensible next
 action. It gathers bounded evidence, records competing hypotheses, cites the
@@ -30,6 +33,7 @@ The product complements, but does not absorb, the other reliability products:
 
 ## Start here
 
+- [Documentation map](docs/README.md)
 - [Product definition](docs/product/product-definition.md)
 - [Architecture overview](docs/architecture/overview.md)
 - [Product-boundary decision](docs/decisions/0001-keep-argus-sre-independent-and-integrate-through-evidence-contracts.md)
@@ -44,11 +48,14 @@ Python 3.12 and GNU Make are the only scaffold-time requirements. The validator
 uses only the Python standard library and does not access the network.
 
 ```sh
+make bootstrap
+make verify
 make validate
 ```
 
-The command verifies repository policy files, Markdown hygiene, internal links,
-ADR indexing, milestone naming, and the validator's own tests. Runtime language,
+`make verify` and the current `make validate` aggregate verify repository policy
+files, Markdown hygiene, internal links and anchors, ADR/index coherence,
+milestone naming, templates, and the validator's own tests. Runtime language,
 contract tooling, persistence, and deployment dependencies enter the repository
 only with the milestone that exercises them.
 

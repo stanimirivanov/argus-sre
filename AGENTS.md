@@ -9,10 +9,9 @@ meanings defined there.
 1. You MUST read [CONTRIBUTING.md](CONTRIBUTING.md), including its ambiguity,
    issue-timing, verification, and completion-report rules.
 2. You MUST inspect the branch and working tree and preserve unrelated work.
-3. You MUST read the [product definition](docs/product/product-definition.md),
-   [architecture overview](docs/architecture/overview.md), relevant
-   [engineering standards](docs/development/engineering-standards.md), and all
-   accepted [architecture decisions](docs/decisions/README.md).
+3. You MUST use the [documentation map](docs/README.md) to load the canonical
+   product, architecture, development, security, roadmap, and decision sources
+   relevant to the task. Do not bulk-read unrelated guides or ADRs.
 4. You MUST use repository-local verification commands and MUST NOT report an
    unavailable or unexecuted check as passed.
 
@@ -43,3 +42,6 @@ meanings defined there.
   it as not run with the reason and residual risk.
 - Follow the canonical [completion report](CONTRIBUTING.md#completion-report)
   after every work item.
+
+The [coding harness guide](docs/development/harness.md) maps guidance to the
+repository's executable feedback tiers and extension rules.

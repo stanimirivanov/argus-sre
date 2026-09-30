@@ -3,7 +3,8 @@
 ## TL;DR
 
 - Use Python 3.12 and GNU Make for the documentation foundation.
-- Run `make doctor`, then `make validate` from the repository root.
+- Run `make bootstrap` for a new checkout, `make verify` during development,
+  and `make validate` before handoff.
 - Validation is offline and uses only the Python standard library.
 - Runtime dependencies will be added only after the M01 technology decision.
 
@@ -19,13 +20,16 @@ the same root targets on Windows Server and Ubuntu.
 ## Verify the checkout
 
 ```sh
-make doctor
+make bootstrap
+make verify
 make validate
 ```
 
-`make fmt` normalizes supported repository text files. Review its diff before
-running `make validate` again. No command downloads dependencies or contacts an
-external service at this stage.
+`make bootstrap` reports the toolchain and confirms that the scaffold has no
+external packages to install. `make fmt` normalizes supported repository text
+files; review its diff before running `make validate` again. `make verify` and
+`make validate` are currently equivalent and offline. The distinction preserves
+a stable inner-loop/acceptance surface for the selected runtime to extend.
 
 ## Constrained environments
 
