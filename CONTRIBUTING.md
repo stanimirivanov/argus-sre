@@ -24,9 +24,11 @@ optional choice. Lowercase wording is explanatory guidance.
 |:--|:--|
 | Workflow, escalation, issue timing, verification, completion | This document |
 | Concise agent entry point | [AGENTS.md](AGENTS.md) |
+| Progressive task-to-document routing | [Documentation map](docs/README.md) |
 | Product scope and autonomy | [Product definition](docs/product/product-definition.md) |
 | Logical and trust boundaries | [Architecture overview](docs/architecture/overview.md) |
 | Engineering practices | [Engineering standards](docs/development/engineering-standards.md) |
+| Coding harness and feedback tiers | [Harness guide](docs/development/harness.md) |
 | Database migration policy | [SQL migration criteria](docs/development/sql-migrations.md) |
 | Durable decisions | [Architecture decisions](docs/decisions/README.md) |
 | Delivery sequence | [Implementation milestones](docs/roadmap/milestones.md) |
@@ -38,9 +40,9 @@ surface a conflict rather than silently selecting the convenient source.
 ## Before starting
 
 A contributor MUST inspect the current branch and working tree, preserve
-unrelated changes, read relevant sources of truth, identify one observable
-outcome, and review contract, security, persistence, documentation, and
-operational effects.
+unrelated changes, use the [documentation map](docs/README.md) to read the
+relevant sources of truth, identify one observable outcome, and review contract,
+security, persistence, documentation, and operational effects.
 
 An ADR is required for a durable choice about compatibility, persisted meaning,
 security or authority, deployment topology, foundational technology, ownership,
@@ -118,6 +120,9 @@ Split a planned slice only when its parts have independently useful outcomes and
 materially different risk, ownership, rollout, or review needs. Do not mix
 unrelated refactoring, dependency updates, generated churn, or formatting.
 
+When one approved outcome requires multiple dependent pull requests, follow the
+[execution-plan guidance](docs/development/harness.md#multi-pr-execution-plans).
+
 ## Architecture and security review
 
 Review every change for these invariants:
@@ -141,8 +146,16 @@ Review every change for these invariants:
 
 ## Verification and constrained environments
 
+Run `make bootstrap` once for a new checkout, use `make verify` as the fast
+offline inner loop, and run `make fmt` plus `make validate` before handoff.
 `make validate` is the aggregate foundation check. A contributor MUST run the
 most complete relevant checks available and report exact commands and outcomes.
+
+`make docs-check` verifies mechanical documentation and repository-policy
+structure. Semantic accuracy remains a review responsibility. When a runtime,
+dependency graph, database, or deployment boundary enters the repository, its
+checks MUST join the stable `make verify` and `make validate` surface rather than
+becoming hidden commands.
 
 When a required check cannot run because of missing network, credentials,
 services, platform support, or sandbox capabilities:
