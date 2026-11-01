@@ -14,8 +14,7 @@
 - Python 3.12, selected by `.python-version`
 - GNU Make 4.3 or newer
 
-On Windows, use a GNU Make distribution that preserves tabbed recipes. CI uses
-the same root targets on Windows Server and Ubuntu.
+Linux is the supported development host. CI runs the root targets on Ubuntu.
 
 ## Verify the checkout
 
