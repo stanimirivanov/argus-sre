@@ -25,3 +25,6 @@ migration, security and operations, and validation.
 | ADR | Decision | Status | Date |
 |:--|:--|:--|:--|
 | [ADR-0001](0001-keep-argus-sre-independent-and-integrate-through-evidence-contracts.md) | Keep Argus SRE independent and integrate through evidence contracts | Accepted | 2026-09-28 |
+| [ADR-0002](0002-bind-incidents-to-authoritative-deployments.md) | Bind incidents to authoritative deployments | Accepted | 2026-11-23 |
+| [ADR-0003](0003-preserve-performance-evidence-authority.md) | Preserve performance evidence authority | Accepted | 2026-11-23 |
+| [ADR-0004](0004-revise-published-investigations-with-late-evidence.md) | Revise published investigations with late evidence | Accepted | 2026-11-23 |

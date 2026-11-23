@@ -103,8 +103,9 @@ likely security-driven process boundary.
    passed, failed, or inconclusive result.
 
 Every retry is correlated and idempotent. Remote calls stay outside database
-transactions. Late evidence cannot silently rewrite a completed investigation;
-it creates a new revision or follow-up investigation.
+transactions. Material late evidence produces an immutable revision for the same investigation
+scope. A change in scope or purpose creates a separately identified follow-up.
+See [ADR-0004](../adr/0004-revise-published-investigations-with-late-evidence.md).
 
 ## Evidence workspace and tool boundary
 
@@ -147,6 +148,9 @@ expand the action. Approval tokens are audience-bound, single-purpose,
 short-lived, and replay-protected.
 
 ## Cross-product contracts
+
+The [evidence handoff map](evidence-handoffs.md) records the agreed deployment
+correlation, first Argus artifact, and separate Argus and Perfeng read authority.
 
 Integration follows this order:
 
