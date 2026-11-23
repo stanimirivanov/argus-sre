@@ -17,7 +17,7 @@
 
 This document defines logical components, information flow, trust boundaries,
 and architectural constraints. The [product definition](../product/product-definition.md)
-governs behavior and safety. Accepted [ADRs](../decisions/README.md) govern
+governs behavior and safety. Accepted [ADRs](../adr/README.md) govern
 durable choices. The [roadmap](../roadmap/milestones.md) governs delivery order.
 
 ## System context

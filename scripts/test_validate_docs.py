@@ -112,7 +112,7 @@ class DecisionTests(unittest.TestCase):
     def test_index_drift_is_reported(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            decisions = root / "docs" / "decisions"
+            decisions = root / "docs" / "adr"
             decisions.mkdir(parents=True)
             (decisions / "0001-choice.md").write_text(
                 "# ADR-0001: Choice\n\n"
@@ -133,13 +133,13 @@ class DecisionTests(unittest.TestCase):
 
             self.assertEqual(
                 validate_docs.validate_decisions(root),
-                ["docs/decisions/README.md: ADR-0001 row does not match its file title, status, date, and link"],
+                ["docs/adr/README.md: ADR-0001 row does not match its file title, status, date, and link"],
             )
 
     def test_duplicate_metadata_and_index_rows_are_reported(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            decisions = root / "docs" / "decisions"
+            decisions = root / "docs" / "adr"
             decisions.mkdir(parents=True)
             (decisions / "0001-choice.md").write_text(
                 "# ADR-0001: Choice\n\n"

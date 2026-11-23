@@ -37,7 +37,7 @@ REQUIRED_FILES = {
     "SECURITY.md",
     "docs/README.md",
     "docs/architecture/overview.md",
-    "docs/decisions/README.md",
+    "docs/adr/README.md",
     "docs/development/dependency-policy.md",
     "docs/development/developer-quickstart.md",
     "docs/development/engineering-standards.md",
@@ -296,14 +296,14 @@ def parse_adr_index(text: str) -> tuple[dict[str, AdrRecord], list[str]]:
         number, filename, title, status, date = (part.strip() for part in match.groups())
         if number in rows:
             line = text.count("\n", 0, match.start()) + 1
-            errors.append(f"docs/decisions/README.md:{line}: duplicate ADR-{number} index row")
+            errors.append(f"docs/adr/README.md:{line}: duplicate ADR-{number} index row")
         rows[number] = AdrRecord(number, title, status, date, filename)
     return rows, errors
 
 
 def validate_decisions(root: Path) -> list[str]:
     """Validate the ADR sequence, metadata, and exact index projection."""
-    decisions = root / "docs" / "decisions"
+    decisions = root / "docs" / "adr"
     index = decisions / "README.md"
     if not index.exists():
         return []
@@ -317,17 +317,17 @@ def validate_decisions(root: Path) -> list[str]:
     numbers = [int(record.number) for record in records]
     expected = list(range(1, len(numbers) + 1))
     if numbers != expected:
-        errors.append(f"docs/decisions: ADR numbers must be unique and contiguous from 0001; got {numbers}")
+        errors.append(f"docs/adr: ADR numbers must be unique and contiguous from 0001; got {numbers}")
     indexed, index_errors = parse_adr_index(index.read_text(encoding="utf-8-sig"))
     errors.extend(index_errors)
     for record in records:
         row = indexed.get(record.number)
         if row is None:
-            errors.append(f"docs/decisions/{record.filename}: missing from ADR index")
+            errors.append(f"docs/adr/{record.filename}: missing from ADR index")
         elif row != record:
-            errors.append(f"docs/decisions/README.md: ADR-{record.number} row does not match its file title, status, date, and link")
+            errors.append(f"docs/adr/README.md: ADR-{record.number} row does not match its file title, status, date, and link")
     for number in sorted(indexed.keys() - {record.number for record in records}):
-        errors.append(f"docs/decisions/README.md: ADR-{number} has no numbered ADR file")
+        errors.append(f"docs/adr/README.md: ADR-{number} has no numbered ADR file")
     return errors
 
 

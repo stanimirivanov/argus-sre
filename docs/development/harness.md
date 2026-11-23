@@ -39,14 +39,14 @@ was verified.
 | Source | Owns |
 |:--|:--|
 | [AGENTS.md](../../AGENTS.md) | Concise tool-facing entry point |
-| [CONTRIBUTING.md](../../CONTRIBUTING.md) | Workflow, ambiguity, issue timing, verification, and completion policy |
+| [CONTRIBUTING.md](../../CONTRIBUTING.md) | Technical requirements, escalation, and verification |
 | [Documentation map](../README.md) | Task-to-source routing |
 | [Product definition](../product/product-definition.md) | Product outcomes and safety |
 | [Architecture overview](../architecture/overview.md) | Capability, evidence, trust, and authority boundaries |
 | [Engineering standards](engineering-standards.md) | Design, language, testing, and operational practices |
 | [Developer quickstart](developer-quickstart.md) | Supported setup and troubleshooting |
 | [Dependency policy](dependency-policy.md) | Admission, pinning, licensing, and vulnerability handling |
-| [ADR index](../decisions/README.md) | Durable decisions and lifecycle |
+| [ADR index](../adr/README.md) | Durable decisions and lifecycle |
 | [Roadmap](../roadmap/milestones.md) | Delivery sequence and promotion evidence |
 
 ## Current command surface
@@ -85,12 +85,7 @@ passed.
 
 ## Multi-PR execution plans
 
-When one approved outcome needs multiple dependent pull requests, add a short
-versioned plan under `docs/development/plans/` with the first plan-bearing
-change. Record the outcome, invariants, exclusions, ordered slices,
-compatibility, rollout, recovery, verification, and discoveries that change the
-sequence. Each slice remains independently reviewable and leaves the repository
-verifiable.
-
-Plans do not replace GitHub issues, milestones, or ADRs. Do not create an empty
-plans directory before a real multi-PR outcome needs one.
+Use the applicable `mattpocock/skills` workflow to plan and track dependent
+changes. Existing execution plans remain technical records of compatibility
+constraints, sequencing, rollout, recovery, and verification evidence. GitHub
+issues and milestones track delivery state.

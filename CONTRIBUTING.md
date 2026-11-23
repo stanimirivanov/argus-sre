@@ -5,8 +5,6 @@
 - Deliver one coherent, verified capability per issue and pull request.
 - Proceed on documented, reversible assumptions; stop for choices that change
   behavior, safety, compatibility, scope, cost, or external state materially.
-- Use a supplied issue. When none is supplied, complete the smallest coherent
-  scope and print a complete proposed issue in the completion report.
 - Run exact repository checks. Never claim an unavailable check passed.
 - Name milestones `MNN - Outcome`, beginning with M01, and include the exact
   milestone in every issue.
@@ -22,7 +20,7 @@ optional choice. Lowercase wording is explanatory guidance.
 
 | Concern | Canonical source |
 |:--|:--|
-| Workflow, escalation, issue timing, verification, completion | This document |
+| Contributor requirements, escalation, and verification | This document |
 | Concise agent entry point | [AGENTS.md](AGENTS.md) |
 | Progressive task-to-document routing | [Documentation map](docs/README.md) |
 | Product scope and autonomy | [Product definition](docs/product/product-definition.md) |
@@ -30,7 +28,7 @@ optional choice. Lowercase wording is explanatory guidance.
 | Engineering practices | [Engineering standards](docs/development/engineering-standards.md) |
 | Coding harness and feedback tiers | [Harness guide](docs/development/harness.md) |
 | Database migration policy | [SQL migration criteria](docs/development/sql-migrations.md) |
-| Durable decisions | [Architecture decisions](docs/decisions/README.md) |
+| Durable decisions | [Architecture decisions](docs/adr/README.md) |
 | Delivery sequence | [Implementation milestones](docs/roadmap/milestones.md) |
 | Exact commands | [README](README.md) and [Makefile](Makefile) |
 
@@ -72,10 +70,10 @@ what work can continue safely.
 
 ## Issue timing and milestones
 
-Issue-first is preferred. If an issue number is supplied, follow that issue and
-link the pull request. If no issue is supplied, implement the smallest coherent
-scope and print the issue afterward. Creating an external issue, milestone,
-pull request, or release requires explicit authorization.
+Use the [issue tracker configuration](docs/agents/issue-tracker.md) and the
+applicable skill. Reuse a supplied issue and follow its scope and milestone.
+Verify target and authority before writing to GitHub. External writes require
+the authorization of the requester or the assigned workflow.
 
 Milestones use `MNN - Short outcome`, beginning with M01. Published numbers are
 never reused or renumbered. Refresh external milestone state immediately before
@@ -182,14 +180,6 @@ or vendor marketing research.
 
 ## Completion report
 
-After every completed work item, print:
-
-1. the exact milestone in `MNN - Outcome` form;
-2. a proposed imperative GitHub issue title;
-3. the complete issue body using the required structure;
-4. assumptions, unresolved questions, and limitations; and
-5. verification commands and outcomes, distinguished as **passed**,
-   **failed**, or **not run**.
-
-The report describes the work actually performed. It does not claim that an
-issue or pull request was created.
+Report the exact checks run, their outcomes, and remaining limitations.
+Include the issue or pull request when one exists. Use the applicable skill
+to prepare delivery evidence.

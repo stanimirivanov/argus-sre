@@ -15,8 +15,8 @@
 
 | Task or changed area | Read before changing it | Verify or consult as needed |
 |:--|:--|:--|
-| Product scope, autonomy, incident outcomes, or safety | [Product definition](product/product-definition.md) | [Architecture overview](architecture/overview.md), relevant [ADRs](decisions/README.md) |
-| Capability, authority, trust, or cross-product boundaries | [Architecture overview](architecture/overview.md), [engineering standards](development/engineering-standards.md) | [ADR index](decisions/README.md), [security policy](../SECURITY.md) |
+| Product scope, autonomy, incident outcomes, or safety | [Product definition](product/product-definition.md) | [Architecture overview](architecture/overview.md), relevant [ADRs](adr/README.md) |
+| Capability, authority, trust, or cross-product boundaries | [Architecture overview](architecture/overview.md), [engineering standards](development/engineering-standards.md) | [ADR index](adr/README.md), [security policy](../SECURITY.md) |
 | Repository policy, CI, tooling, or contributor experience | [Harness guide](development/harness.md), [developer quickstart](development/developer-quickstart.md) | `make docs-check`, `make verify`, `make validate` |
 | Runtime or contract-toolchain selection | [Engineering standards](development/engineering-standards.md), [dependency policy](development/dependency-policy.md) | [M01 roadmap](roadmap/milestones.md#m01---trusted-product-foundation), a new ADR |
 | Persistence or SQL migration design | [SQL migration criteria](development/sql-migrations.md) | Architecture and security guidance, a technology ADR before implementation |
@@ -32,7 +32,7 @@
   flow, authority, and cross-product boundaries.
 - [Development](development/harness.md) owns engineering, environment,
   dependency, migration, and harness guidance.
-- [Decisions](decisions/README.md) records durable choices and supersession.
+- [Decisions](adr/README.md) records durable choices and supersession.
 - [Roadmap](roadmap/milestones.md) owns delivery order and promotion gates.
 - [Security](../SECURITY.md) owns private reporting and security expectations.
 
