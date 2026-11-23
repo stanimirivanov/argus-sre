@@ -36,7 +36,7 @@ The product complements, but does not absorb, the other reliability products:
 - [Documentation map](docs/README.md)
 - [Product definition](docs/product/product-definition.md)
 - [Architecture overview](docs/architecture/overview.md)
-- [Product-boundary decision](docs/decisions/0001-keep-argus-sre-independent-and-integrate-through-evidence-contracts.md)
+- [Product-boundary decision](docs/adr/0001-keep-argus-sre-independent-and-integrate-through-evidence-contracts.md)
 - [Implementation milestones](docs/roadmap/milestones.md)
 - [Contributor workflow](CONTRIBUTING.md)
 - [Engineering standards](docs/development/engineering-standards.md)

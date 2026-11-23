@@ -8,7 +8,7 @@
 /Makefile @stanimirivanov
 /.github/ @stanimirivanov
 /docs/architecture/ @stanimirivanov
-/docs/decisions/ @stanimirivanov
+/docs/adr/ @stanimirivanov
 /docs/development/ @stanimirivanov
 /docs/product/ @stanimirivanov
 /docs/roadmap/ @stanimirivanov
