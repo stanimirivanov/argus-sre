@@ -173,7 +173,8 @@ unsupported high-risk action can pass the deterministic safety gate.
 Acceptance ingredients:
 
 - Agree on service, repository, deployment, capability, and revision correlation.
-- Consume exact released Argus contracts or authenticated versioned reads.
+- Start with an authorized immutable Argus change evidence artifact and its
+  exact released contract. See the [handoff map](../architecture/evidence-handoffs.md).
 - Retrieve affected capabilities, selection decisions, inclusion and omission
   reasons, execution attempts, misses, adaptations, and validation outcomes.
 - Preserve Argus evidence provenance without reinterpreting its policy.
